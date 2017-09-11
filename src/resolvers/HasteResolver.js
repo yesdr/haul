@@ -19,6 +19,7 @@ const findProvidesModule = require('../utils/findProvidesModule');
  */
 function HasteResolver(options: Options) {
   const hasteMap = findProvidesModule(options.directories);
+  console.log('HASTE MAP', hasteMap);
 
   this.apply = resolver => {
     resolver.plugin(
