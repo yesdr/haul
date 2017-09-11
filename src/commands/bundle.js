@@ -65,6 +65,7 @@ async function bundle(opts: *) {
   const stats = await new Promise((resolve, reject) =>
     compiler.run((err, info) => {
       if (err || info.hasErrors()) {
+        console.error(err, info);
         reject(new MessageError(messages.bundleFailed()));
       } else {
         resolve(info);
@@ -72,7 +73,7 @@ async function bundle(opts: *) {
     }),
   );
 
-  clear();
+  if (!opts.dontClear) clear();
 
   logger.done(
     messages.bundleBuilt({
@@ -153,6 +154,10 @@ module.exports = {
     {
       name: 'reactNativeModule',
       description: 'Path to react-native module, eg. node_modules/react-native',
+    },
+    {
+      name: 'dontClear',
+      description: "Don' clear terminal screen when finished",
     },
   ],
 };
