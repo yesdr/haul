@@ -32,6 +32,7 @@ async function bundle(opts: *) {
       dev: opts.dev,
       minify: opts.minify,
       bundle: true,
+      reactNativeModule: opts.reactNativeModule,
     },
   );
 
@@ -148,6 +149,10 @@ module.exports = {
       name: 'config',
       description: 'Path to config file, eg. webpack.haul.js',
       default: 'webpack.haul.js',
+    },
+    {
+      name: 'reactNativeModule',
+      description: 'Path to react-native module, eg. node_modules/react-native',
     },
   ],
 };

@@ -32,6 +32,7 @@ async function start(opts: *) {
       dev: opts.dev,
       minify: opts.minify,
       port: opts.port,
+      reactNativeModule: opts.reactNativeModule,
     },
   );
 
@@ -169,6 +170,10 @@ module.exports = {
       name: 'config',
       description: 'Path to config file, eg. webpack.haul.js',
       default: 'webpack.haul.js',
+    },
+    {
+      name: 'reactNativeModule',
+      description: 'Path to react-native module, eg. node_modules/react-native',
     },
   ],
 };

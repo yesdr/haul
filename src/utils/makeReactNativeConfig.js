@@ -24,6 +24,7 @@ const PLATFORMS = ['ios', 'android'];
 type ConfigOptions = {
   root: string,
   dev: boolean,
+  reactNativeModule: ?string,
 };
 
 type WebpackPlugin = {
@@ -53,6 +54,7 @@ const getDefaultConfig = ({
   minify,
   bundle,
   port,
+  reactNativeModule,
 }): WebpackConfig => ({
   context: root,
   entry: [
@@ -193,7 +195,7 @@ const getDefaultConfig = ({
        * We don't support it, but need to provide a compatibility layer
        */
       new HasteResolver({
-        directories: [moduleResolve(root, 'react-native')],
+        directories: [reactNativeModule || moduleResolve(root, 'react-native')],
       }),
       /**
        * This is required by asset loader to resolve extra scales
