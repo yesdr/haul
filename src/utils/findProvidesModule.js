@@ -82,12 +82,14 @@ function findProvidesModule(directories, opts = {}) {
         return;
       }
 
+      const absFileName = path.resolve(process.cwd(), fileName);
+
       // Throw when duplicated modules are provided from a different
       // fileName
-      if (modulesMap[moduleName] && modulesMap[moduleName] !== fileName) {
+      if (modulesMap[moduleName] && modulesMap[moduleName] !== absFileName) {
         throw new Error('Duplicate haste module found');
       }
-      modulesMap[moduleName] = path.resolve(process.cwd(), fileName);
+      modulesMap[moduleName] = absFileName;
     }
   };
 
