@@ -87,7 +87,7 @@ function findProvidesModule(directories, opts = {}) {
       if (modulesMap[moduleName] && modulesMap[moduleName] !== fileName) {
         throw new Error('Duplicate haste module found');
       }
-      modulesMap[moduleName] = fileName;
+      modulesMap[moduleName] = path.resolve(process.cwd(), fileName);
     }
   };
 
