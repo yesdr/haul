@@ -32,6 +32,7 @@
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.2.2",
+    "babel-preset-react-native": "^2.0.0",
     "babel-register": "^6.24.0",
     "camelcase-keys": "^4.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.0.0",
@@ -51,6 +52,7 @@
     "inquirer": "^3.0.6",
     "loader-utils": "^1.1.0",
     "minimist": "^1.2.0",
+    "mock-require": "^2.0.2",
     "morgan": "^1.8.1",
     "open-in-editor": "^2.2.0",
     "opn": "^4.0.2",
@@ -65,8 +67,7 @@
     "webpack": "^2.3.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0",
-    "ws": "^2.2.2",
-    "babel-preset-react-native": "^2.0.0"
+    "ws": "^2.2.2"
   },
   "devDependencies": {
     "babel-jest": "test",

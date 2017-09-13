@@ -7,6 +7,10 @@
  * This file is loaded as a part of user bundle
  */
 
+const mock = require('mock-require');
+
+mock('bzl', source => source);
+
 /* eslint-disable import/no-extraneous-dependencies */
 require('../../vendor/polyfills/console.js')(global);
 require('../../vendor/polyfills/error-guard.js');
