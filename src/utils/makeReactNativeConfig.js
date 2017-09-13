@@ -68,7 +68,7 @@ const getDefaultConfig = ({
   output: {
     path: path.join(root, 'dist'),
     filename: `index.${platform}.bundle`,
-    publicPath: `http://localhost:${port}/artifacts`,
+    publicPath: `/artifacts/`,
   },
   module: {
     rules: [
