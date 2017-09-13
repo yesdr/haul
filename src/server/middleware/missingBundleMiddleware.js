@@ -14,8 +14,6 @@ function missingBundleMiddleware(req, res, next) {
       Couldn't load bundle
 
       Make sure that Haul is running with --platform all or --platform ${platform}
-
-      Full request path: ${req.path}
     `,
     );
     return;
