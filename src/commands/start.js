@@ -65,6 +65,9 @@ async function start(opts: *) {
         );
       }
     },
+    {
+      lazy: opts.lazy,
+    },
   );
 
   // Run `adb reverse` on Android
@@ -174,6 +177,12 @@ module.exports = {
     {
       name: 'reactNativeModule',
       description: 'Path to react-native module, eg. node_modules/react-native',
+    },
+    {
+      name: 'lazy',
+      description:
+        'Switch into lazy mode -- that means no watching, but recompilation on every request',
+      default: false,
     },
   ],
 };

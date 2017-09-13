@@ -36,6 +36,10 @@ const WebSocketServer = require('ws').Server;
 const webSocketProxy = require('./util/websocketProxy');
 const WebSocketDebuggerProxy = require('./util/WebsocketDebuggerProxy');
 
+type ServerOptions = {
+  lazy: boolean,
+};
+
 /**
  * Packager-like Server running on top of Webpack
  */
@@ -43,10 +47,11 @@ function createServer(
   compiler: any,
   onInvalid: InvalidCallback,
   onCompile: CompileCallback,
+  opts: ServerOptions,
 ) {
   const appHandler = express();
   const webpackMiddleware = webpackDevMiddleware(compiler, {
-    lazy: false,
+    lazy: opts.lazy,
     noInfo: true,
     reporter: null,
     stats: 'errors-only',
