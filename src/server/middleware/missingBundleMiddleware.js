@@ -16,6 +16,9 @@ function missingBundleMiddleware(req, res, next) {
       Make sure that Haul is running with --platform all or --platform ${platform}
     `,
     );
+    console.error(
+      `Couldn't load bundle\nMake sure that Haul is running with --platform all or --platform ${platform}`,
+    );
     return;
   }
 

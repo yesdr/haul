@@ -67,8 +67,8 @@ const getDefaultConfig = ({
   devtool: bundle ? 'source-map' : 'eval-source-map',
   output: {
     path: path.join(root, 'dist'),
-    filename: `index.${platform}.bundle`,
-    publicPath: `/artifacts/`,
+    filename: `artifacts/index.${platform}.bundle`,
+    publicPath: `http://localhost:${port}/`,
   },
   module: {
     rules: [
